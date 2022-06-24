@@ -6,7 +6,7 @@ import axios from 'axios';
 function App() {
 
   const http = axios.create({
-    baseURL: 'http://localhost:8000/',
+    baseURL: 'https://laravel-sanctum-spa.herokuapp.com/',
    withCredentials:true,
   })
 
@@ -18,7 +18,7 @@ function App() {
   const login = async(e)=>{
     e.preventDefault();
 
-   await  http.get('http://127.0.0.1:8000/sanctum/csrf-cookie').then(response => {
+   await  http.get('/sanctum/csrf-cookie').then(response => {
       console.log('cookie', response)
   })
  /*await http.get('/login').then(response => {
