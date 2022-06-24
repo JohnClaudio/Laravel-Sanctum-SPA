@@ -21,9 +21,9 @@ function App() {
    await  http.get('/sanctum/csrf-cookie').then(response => {
       console.log('cookie', response)
   })
- /*await http.get('/login').then(response => {
+ await http.get('/login').then(response => {
     console.log('login', response)
-});*/
+});
   await http.post('/login',user).then(response => {
     console.log('login', response)
 });
