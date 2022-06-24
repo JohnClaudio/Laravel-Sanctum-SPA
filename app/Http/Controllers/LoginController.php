@@ -32,7 +32,7 @@ class LoginController extends Controller
             'password' => ['required', 'password'],
         ]);
 */
-        $credentials = ['email'=>'lowell01@example.com','password'=>'password'];
+        $credentials = ['email'=>'abel40@example.net','password'=>'password'];
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
