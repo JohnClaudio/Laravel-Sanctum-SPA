@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 /*
@@ -14,11 +15,22 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')->name('login');
 });
 
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/login', [LoginController::class, 'authenticate2']);
+Route::get('/users', [UserController::class, 'index'])->middleware('auth:sanctum');
 
+Route::middleware('auth:sanctum')
+    ->get('/cadastros', [UserController::class, 'index'])->name('');
+
+Route::post('/cadastro', [UserController::class, 'store'])->name('signup');
+
+
+Route::get( '/some_url', function () {
+    return "Token is wrong";
+}
+)->name('login');
 
 
