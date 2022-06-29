@@ -1,0 +1,54 @@
+.form-sign{
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-left: 40px;
+    flex: 1;
+    
+}
+.form-sign__input{
+    padding: 40px;
+    font-size: 15px;
+    border-radius: 5px;
+
+}
+.form-sign__input:focus{
+    border-bottom: 1px solid #f44336!important;
+    box-shadow: 0 1px 0 0 #f44336 !important;
+
+}
+.form-sign__button{
+    background-color: var(--laravel);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    
+}
+.form-sign__button:focus{
+    background-color: rgb(184, 23, 23)!important;
+}
+.form-sign__button:hover{
+    background-color:  #f16d5e;
+    cursor: pointer;
+}
+
+.form-sign__label{
+    font-size: 1.0em;
+    color: var(--deep-grey);
+}
+
+@media screen and (max-width: 600px) {
+    
+   form{
+        flex-basis: 100%;
+        padding-bottom: 30%;     
+    }
+    .form-sign input{
+        width: 100%;
+    }
+
+    
+  }
