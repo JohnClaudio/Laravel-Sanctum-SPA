@@ -15,17 +15,13 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome')->name('login');
+    return view('welcome');
 });
 
 
 Route::post('/login', [LoginController::class, 'authenticate']);
-Route::get('/login', [LoginController::class, 'authenticate2']);
 Route::get('/users', [UserController::class, 'index'])->middleware('auth:sanctum');
-Route::post('/user', [UserController::class, 'getUserByEmail'])->middleware('auth:sanctum');
 Route::post('/user/update', [UserController::class, 'updateUser'])->middleware('auth:sanctum');
-
-//Route::middleware('auth:sanctum')->get('/cadastros', [UserController::class, 'index'])->name('');
 Route::post('/cadastro', [UserController::class, 'store'])->name('signup');
 
 

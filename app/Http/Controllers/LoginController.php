@@ -16,7 +16,6 @@ class LoginController extends Controller
             'password' => ['required', 'string'],
         ]);
 
-      //  $credentials = ['email'=>'lowell01@example.com','password'=>'password'];
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
@@ -27,21 +26,5 @@ class LoginController extends Controller
 
         return response()->json('acess not allowed', '401');
 }
-    public function authenticate2(Request $request)
-    {
-    /*    $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required', 'password'],
-        ]);
-*/
-        $credentials = ['email'=>'abel40@example.net','password'=>'password'];
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return response()->json('autorizado', '202');
-        }
-
-        return response()->json('acess not allowed', '401');
-    }
 }

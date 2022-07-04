@@ -11,13 +11,11 @@ class UserController extends Controller
 {
     public function index(){
 
-      //  $USER_AUTHENTICAD = auth('sanctum')->check();
 
         if(auth("sanctum")->check()){
             $user = User::all();
             return response($user,'202');
         }
-
         return response()->json('user not authenticad','401');
     }
 
@@ -53,10 +51,6 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id
         ]);
-
-
-
-
 
         $user->update($request->only('name', 'email'));
     }
