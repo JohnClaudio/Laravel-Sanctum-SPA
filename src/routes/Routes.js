@@ -12,6 +12,8 @@ import {
 import Login from '../pages/login/Login'
 import SingUp from '../pages/singUp/SingUp'
 import UserList from '../pages/userList/UserList'
+import Profile from '../pages/profile/Profile'
+
 
 const isLoggedIn = (reqCookies = null) => {
   // if we don't have request cookies, get the cookie from client
@@ -25,14 +27,15 @@ const isLoggedIn = (reqCookies = null) => {
 
 const Rotas = () => {
    return(
-    <BrowserRouter>
+   
     <Routes>
       <Route path="/" exact={true} element={<Login />} />
       <Route element = { <Login/> }  path="/login" />
       <Route element = {<SingUp/> }  path="/cadastro"/>
+      <Route element = {<Profile/> }  path="/profile"/>
       <Route element =  { isLoggedIn()==true ? <UserList/>: <p>usuario nao autenticado</p>}     path="/usuarios" />       
     </Routes>
-  </BrowserRouter>
+
           
    )
 }

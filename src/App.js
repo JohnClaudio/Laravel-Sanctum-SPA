@@ -1,6 +1,8 @@
 import './App.css';
 
 import UserLogin from './components/UserLoginForm/UserLoginForm'
+import {IsloggedInContextProvider} from './context/isloggedIn';
+import {BrowserRouter} from "react-router-dom";
 
 import Rotas from './routes/Routes'
 
@@ -9,12 +11,15 @@ import UserSignUpForm from './components/UserSignUpForm/UserSignUpForm';
 function App() {
 
   return (
-    <>
+    
+  <IsloggedInContextProvider>
+   
+    <NavBar></NavBar>
+    <Rotas/>
+   
+  </IsloggedInContextProvider>
 
-
-  <NavBar></NavBar>
-  <Rotas/>
-    </>
+    
   );
 }
 

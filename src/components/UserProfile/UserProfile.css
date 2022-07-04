@@ -1,4 +1,4 @@
-.form-sign{
+.form-profile{
     display: flex;
     flex-direction: column;
     max-width: 500px;
@@ -6,18 +6,18 @@
     flex: 1;
     
 }
-.form-sign__input{
+.form-profile__input{
     padding: 40px;
     font-size: 15px;
     border-radius: 5px;
 
 }
-.form-sign__input:focus{
+.form-profile__input:focus{
     border-bottom: 1px solid #f44336!important;
     box-shadow: 0 1px 0 0 #f44336 !important;
 
 }
-.form-sign__button{
+.form-profile__button{
     background-color: var(--laravel);
     border: none;
     padding: 15px;
@@ -27,36 +27,16 @@
     font-size: 15px;
     
 }
-.form-sign__button:focus{
+
+.form-profile__button:focus{
     background-color: rgb(184, 23, 23)!important;
 }
-.form-sign__button:hover{
+.form-profile__button:hover{
     background-color:  #f16d5e;
     cursor: pointer;
 }
 
-.form-sign__label{
+.form-profile__label{
     font-size: 1.0em;
     color: var(--deep-grey);
 }
-.login{
-    padding-top: 10px;
-    font-size: 1.1em;
-    color:  #f16d5e;
-    cursor: pointer;
-    text-align: center;
-}
-
-
-@media screen and (max-width: 600px) {
-    
-   form{
-        flex-basis: 100%;
-        padding-bottom: 30%;     
-    }
-    .form-sign input{
-        width: 100%;
-    }
-
-    
-  }

@@ -1,3 +1,6 @@
 nav .nav-wrapper{
     background-color: #F05340 ;
 }
+li a {
+    height: 60px !important;
+}

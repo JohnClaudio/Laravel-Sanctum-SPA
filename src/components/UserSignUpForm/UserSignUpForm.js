@@ -3,6 +3,8 @@ import {axios_post,axios_get} from '../../service/user_authentication'
 
 import axios from 'axios';
 
+import './UserSignUpForm.css'
+
 const http = axios.create({
     baseURL: 'http://localhost:8000/',
    withCredentials:true,
@@ -23,12 +25,9 @@ function UserSignUpForm() {
     event.preventDefault();
     
   };
-  useEffect(()=>{
-    http.get('/users').then((response) => {
-      console.log(response.data)
-    }) 
-  })
+
   return (
+
     <form className="form-sign" action="" onSubmit={handleSubmit}>
 
     <label className="form-sign__label" htmlFor="name">nome</label>
@@ -40,9 +39,10 @@ function UserSignUpForm() {
     <label className="form-sign__label" htmlFor="password">Password</label>
     <input className="form-sign__input" type="password" name="password" value={user.password}  onChange={updateUser} />
    
-    <button className="form-sign__button" type='submit'>cadastrar</button>
-    <a href="">Sing Up</a>
+    <button className="form-sign__button" type='submit'>Register</button>
+    <label className="login"> Sign in</label>
     </form>
+  
   )
 }
 
