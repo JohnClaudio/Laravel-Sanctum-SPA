@@ -46,8 +46,29 @@ class UserController extends Controller
 
     }
 
-    public  function editUser(Request $request){
+    public  function updateUser(Request $request){
 
+        $user = $request->user();
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $user->id
+        ]);
+
+
+
+
+
+        $user->update($request->only('name', 'email'));
+    }
+
+    public  function getUserByEmail(Request $request){
+
+        $data  = $request->validate([
+
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+
+        ]);
+            $user = User::select('name','email')->where('email',$request->get('email'));
 
     }
 }
