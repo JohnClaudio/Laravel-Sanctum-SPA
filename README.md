@@ -8,7 +8,6 @@
 -   Laravel 9 (backend)
 -   ReactJS (frontend)
 -   Login, register, update profile
--   password reset
 -   Authentication with Sanctum
 
 
